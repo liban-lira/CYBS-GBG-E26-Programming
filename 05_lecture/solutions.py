@@ -1,4 +1,4 @@
-#------------------HIGHEST NUMBER-------------------
+# ------------------HIGHEST NUMBER-------------------
 a = 1
 b = 2
 c = 3
@@ -11,8 +11,7 @@ else:
     print("c is the biggest")
 
 
-
-#-------------------SECURITY CLEARANCE--------------------
+# -------------------SECURITY CLEARANCE--------------------
 user_role = input("Enter your role: ")
 security_clearance = int(input("Enter your security clearance level (1-5): "))
 
@@ -28,7 +27,7 @@ else:
     print("Deny Access")
 
 
-#BONUS
+# BONUS
 # from datetime import datetime
 
 # user_role = input("Enter your role: ")
@@ -50,7 +49,7 @@ else:
 #     print("Deny Access")
 
 
-#-------------------PORT NUMBER CHECKER--------------------
+# -------------------PORT NUMBER CHECKER--------------------
 port = int(input("Enter port number: "))
 
 match port:
@@ -70,7 +69,7 @@ match port:
         print("Unknown or Custom Port - Investigate")
 
 
-#BONUS
+# BONUS
 # print("\nPort Range Analysis:")
 # match port:
 #     case p if 1 <= p <= 1023:
@@ -83,8 +82,57 @@ match port:
 #         print("Invalid port number")
 
 
+# --------------------LOGIN ATTEMPTS---------------------
+login_attempts = [
+    {"user": "admin", "ip": "10.0.0.5", "failed": 1},
+    {"user": "admin", "ip": "203.0.113.10", "failed": 7},
+    {"user": "guest", "ip": "10.0.0.8", "failed": 2},
+    {"user": "root", "ip": "203.0.113.50", "failed": 5},
+]
+for attempt in login_attempts:
+    print(f"User: {attempt['user']}")
+    print(f"IP: {attempt['ip']}")
+    print(f"Failed attempts: {attempt['failed']}")
+    print()
 
-#--------------------PASSWORD CHECKER--------------------
+
+# --------------------SECURITY LOG ANALYSIS---------------------
+
+events = [
+    "malware detected",
+    "user login",
+    "failed login",
+    "file access",
+    "email sent",
+    "unauthorized access",
+]
+
+sus_events = [
+    "failed login",
+    "unauthorized access",
+    "malware detected",
+]
+
+total_events = 0
+suspicious_events = 0
+
+for event in events:
+    total_events += 1
+    if event in sus_events:
+        suspicious_events += 1
+        print(f"ALERT: {event}")
+    else:
+        print(f"OK: {event}")
+
+print("---")
+print(f"Total events: {total_events}")
+print(f"Suspicious events: {suspicious_events}")
+if suspicious_events == 0:
+    print("SECURE")
+else:
+    print("AT RISK")
+
+# --------------------PASSWORD CHECKER--------------------
 attempts = 1
 while True:
     password = input("What is your password")
@@ -100,7 +148,3 @@ while True:
         break
 
 print(attempts)
-
-
-#FOR LOOP SECTION WILL BE PROVIDED DURING 
-#NEXT LECTURE
