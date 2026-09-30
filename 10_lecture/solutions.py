@@ -93,3 +93,13 @@ import csv
 # from calc import add
 # # import calc
 # print(add(1,2))
+
+
+
+
+# ---------------------Requests--------------------------
+# import requests
+
+# req = requests.get('https://jsonplaceholder.typicode.com/posts/1')
+# print(req.status_code)
+# print(req.json())
